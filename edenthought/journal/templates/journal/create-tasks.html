@@ -1,0 +1,28 @@
+{% extends 'journal/navbar.html'%}
+
+{% load crispy_forms_tags %} <!--To apply the bootstrap 5 in your application-->
+
+{% block content %}
+
+    <br>
+
+    <div class="container bg-white shadow-lg p-5 form-layout">
+
+        <h3> List your plan </h3>
+        <hr>
+
+        <form method="POST" autocomplete="off" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{CreateThoughtForm|crispy}}
+
+            <br><br>
+
+            <button class="btn btn-primary btn-md w-100 btn-block p-3" type = "submit" > Submit </button>
+
+        </form>
+
+    </div>
+
+{% endblock %}

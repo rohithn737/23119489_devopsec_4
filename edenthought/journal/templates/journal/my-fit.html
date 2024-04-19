@@ -1,0 +1,36 @@
+{% extends 'journal/navbar.html'%}
+
+{% block content %}
+
+    <br>
+
+    {%for fit in FitThoughts %}
+        <br>
+        <div class="container bg-white shadow-lg p-5 form-layout">
+
+            <h5> <strong> WEEK - </strong>  {{fit.week}} </h5>   
+            <h5> <strong> WEIGHT -  </strong> {{fit.weight}} </h5>
+            <h5> <strong> FAT % - </strong>  {{fit.fat}} </h5>
+            <h5> <strong> PROGRESS MADE - </strong>  {{fit.progress}} </h5>
+            <h5> <strong> DIET - </strong>  {{fit.diet}} </h5>
+            <h5> <strong> WATER INTAKE - </strong>  {{fit.water}} </h5>
+            <h5> <strong> DATE POSTED -- </strong>  {{fit.date}} </h5>
+            <br>
+            <img src="{{fit.image.url}}" hieght="300" width="300" alt="" />
+            <br>
+            <br>
+
+            <a href = "{% url 'update-fit' fit.id %}">  Update Progress </a>
+            <br>
+            <a href = "{% url 'delete-fit' fit.id %}">  Delete your progress </a>
+
+            <br>
+
+            
+
+
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

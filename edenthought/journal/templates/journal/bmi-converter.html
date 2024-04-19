@@ -1,0 +1,42 @@
+{% extends 'journal/navbar.html'%}
+<br>
+{% block title %}BMI Calculator{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <!--Currency Coverter Logic-->
+    <div class="col-md-3 mt-4">
+        <div class="card text-white bg-dark mb-3 text-center">
+            <h4><strong>BMI CALCULATOR</strong></h4>
+        </div>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        height: <input type="float" name="height" required placeholder="Enter height"><br>
+        <br>
+        weight: <input type="float" name="weight" step="any" required placeholder="Enter weight"><br>
+        <br>
+        <input type="submit" name="bmi_submit" value="Calculate BMI">
+    </form>
+    <br>
+    <!--Currency Coverter Results Display-->
+    {% if bmi_result %}
+    <div class="card text-white bg-dark mb-3 text-center">
+        <h4><strong>Your BMI</strong></h4>
+    </div>
+    <br>
+    <p><strong>Converted Amount: {{ bmi_result.BMI }}</strong></p>
+
+    {% elif error %}
+    <p><strong>Error: {{ error }}</strong></p>
+    {% endif %}
+    </div>
+
+    
+    
+</div>
+
+
+{% endblock %}

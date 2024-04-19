@@ -1,0 +1,43 @@
+{% extends 'journal/navbar.html'%}
+<br>
+{% block title %}Timezone Covereter{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <!--Currency Coverter Logic-->
+    <div class="col-md-3 mt-4">
+        <div class="card text-white bg-dark mb-3 text-center">
+            <h4><strong>TIMEZONE</strong></h4>
+        </div>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        country: <input type="float" name="height" required placeholder="Enter country"><br>
+        <br>
+        city: <input type="float" name="weight" step="any" required placeholder="Enter city"><br>
+        <br>
+        <input type="submit" name="bmi_submit" value="Calculate BMI">
+    </form>
+    <br>
+    <!--Currency Coverter Results Display-->
+    {% if bmi_result %}
+    <div class="card text-white bg-dark mb-3 text-center">
+        <h4><strong>Your Time</strong></h4>
+    </div>
+    <br>
+    <p><strong>time: {{ bmi_result.time }}</strong></p>
+    
+
+    {% elif error %}
+    <p><strong>Error: {{ error }}</strong></p>
+    {% endif %}
+    </div>
+
+    
+    
+</div>
+
+
+{% endblock %}

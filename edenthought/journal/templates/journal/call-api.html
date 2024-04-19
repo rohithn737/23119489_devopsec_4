@@ -1,0 +1,38 @@
+{% extends 'journal/navbar.html'%}
+{% block title %}Currency Converter{% endblock %}
+
+
+{% block content %}
+
+< class="container">
+    <!--Currency Coverter Logic-->
+    <div class="col-md-3 mt-4">
+        <div class="card text-white bg-dark mb-3 text-center">
+            <h4><strong>BMI CALCULATOR</strong></h4>
+        </div>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        height: <input type="text" name="" required placeholder="Enter height"><br>
+        weight: <input type="number" name="wieght" step="any" required placeholder="Enter weight"><br>
+        <input type="submit" name="bmi_submit" value="Convert Currency">
+    </form>
+
+    <!--Currency Coverter Results Display-->
+    {% if bmi_result %}
+    <div class="card text-white bg-dark mb-3 text-center">
+        <h4><strong>Conversion Result</strong></h4>
+    </div>
+    <p><strong>Converted Amount: {{ bmi_result.converted_amount }}</strong></p>
+
+    {% elif error %}
+    <p><strong>Error: {{ error }}</strong></p>
+    {% endif %}
+    </div>
+
+    
+    
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'journal/navbar.html'%}
+
+{% block content %}
+
+    <br>
+
+    {%for thought in AllThoughts %}
+        <br>
+        <div class="container bg-white shadow-lg p-5 form-layout">
+
+
+            <h5> <strong> TITLE - </strong> {{thought.title}} </h5>   
+
+            <h5> <strong> TASK - </strong> {{thought.content}} </h5> 
+            <br>
+
+            <a href = "{% url 'update-tasks' thought.id %}">  Update Tasks </a>
+            <br>
+            
+            
+            <a href = "{% url 'delete-tasks' thought.id %}">  Delete Tasks </a>
+
+
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

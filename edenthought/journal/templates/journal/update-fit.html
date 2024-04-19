@@ -1,0 +1,32 @@
+{% extends 'journal/navbar.html'%}
+
+{% load crispy_forms_tags %} <!--To apply the bootstrap 5 in your application-->
+
+{% block content %}
+
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h3> Update your progress </h3>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{UpdateFitForm|crispy}}
+
+            <br><br>
+            <br>
+
+            <button class="btn btn-secondary btn-md w-100 btn-block p-3" type = "submit" > Update </button>
+
+        </form>
+
+        <br>
+        
+        <a href="{% url 'my-fit'  %}"> Return to Tasks  </a>
+
+    </div>
+
+{% endblock %}

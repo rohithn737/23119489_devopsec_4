@@ -1,0 +1,22 @@
+<!-- result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Call Result</title>
+</head>
+<body>
+    <h1>API Call Result</h1>
+    
+    {% if api_response %}
+        <p>API Response:</p>
+        <pre>{{ api_response }}</pre>
+    {% else %}
+        <p>No API response received.</p>
+    {% endif %}
+    
+    <a href="{% url 'call-api' %}">Call API Again</a>
+</body>
+</html>

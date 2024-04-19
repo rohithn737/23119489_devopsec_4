@@ -1,0 +1,22 @@
+<!-- invoke_lambda.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoke Lambda</title>
+</head>
+<body>
+    <h1>Invoke Lambda Function</h1>
+    <form action="{% url 'invoke-lambda' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Invoke Lambda</button>
+    </form>
+    {% if response_payload %}
+    <div>
+        <h2>Response from Lambda:</h2>
+        <pre>{{ response_payload }}</pre>
+    </div>
+    {% endif %}
+</body>
+</html>

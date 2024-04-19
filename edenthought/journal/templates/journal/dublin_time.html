@@ -1,0 +1,17 @@
+<!-- dublin_time.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dublin Time</title>
+</head>
+<body>
+    <h1>Time in Dublin</h1>
+    {% if time_data %}
+        <p>Current time: {{ time_data.current_time }}</p>
+        <p>Time zone: {{ time_data.time_zone }}</p>
+    {% else %}
+        <p>No time data available.</p>
+    {% endif %}
+</body>
+</html>

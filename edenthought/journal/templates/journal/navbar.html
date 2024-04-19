@@ -1,0 +1,179 @@
+{% load static %}
+
+<htnml>
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/spacelab/bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}"> <!--this is the custom css file we made in css--styles.css-->
+
+    </head>
+      
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary justify-content-center">
+
+        <a class="navbar-brand main-heading"> 
+                
+          &nbsp; {{user}} 
+        
+        </a>
+    
+    
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+    
+        </button>
+    
+    
+          <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+    
+            
+            <ul class="navbar-nav ml-auto"> <!--ml -auto will move buttons to the right side and ml (move left) to the right side-->
+    
+    
+              &nbsp;     &nbsp;     &nbsp; 
+    
+    
+              <li class="nav-link">
+          
+                <a class="nav-link"  href="{% url 'dashboard' %}"> Dashboard </a> 
+    
+              </li>
+    
+    
+              &nbsp;     &nbsp;     &nbsp; 
+              
+    
+              <li class="nav-link">
+    
+                <a class="nav-link"  href=' {% url 'create-tasks' %} ' > Create Weekly plan </a>
+    
+              </li>
+    
+
+              &nbsp;     &nbsp;     &nbsp; 
+
+              <li class="nav-link">
+    
+                <a class="nav-link"  href=' {% url 'my-tasks' %} ' > My Plan </a>
+    
+              </li>
+    
+              
+              &nbsp;     &nbsp;     &nbsp;
+              
+              <li class="nav-link">
+    
+                <a class="nav-link"  href=' {% url 'profile-management' %} ' > Profile Management </a>
+    
+              </li>
+    
+              
+              &nbsp;     &nbsp;     &nbsp;
+
+              <li class="nav-link">
+    
+                <a class="nav-link"  href=' {% url 'create-fit' %} ' > Goal Track </a>
+    
+              </li>
+    
+              
+              &nbsp;     &nbsp;     &nbsp;
+
+              <li class="nav-link">
+    
+                <a class="nav-link"  href=' {% url 'my-fit' %} ' > View Progress </a>
+    
+              </li>
+
+              &nbsp;     &nbsp;     &nbsp;
+
+              <li class="nav-link">
+    
+                <a class="nav-link"  href=' {% url 'convert' %} ' > BMI caluclator </a>
+    
+              </li>
+    
+              
+              &nbsp;     &nbsp;     &nbsp;
+
+              <li class="nav-link">
+    
+                <a class="nav-link"  href=' {% url 'calorie-cal' %} ' > Calorie calculator </a>
+    
+              </li>
+              
+
+            </ul>
+          
+            
+          </div>
+
+          <div class="collapse navbar-collapse text-center justify-content-end " id="navbarNavDropdown ">
+            
+            <ul class="navbar-nav ml-auto">
+
+              &nbsp;     &nbsp;     &nbsp;
+              
+              <li class="nav-link">
+    
+                <a class="nav-link"  href=' {% url 'user-logout' %} ' > Logout </a>
+    
+              </li>
+
+            </ul>
+
+          </div>
+    
+    
+    </nav>
+    
+
+    {% block content %}
+
+
+
+
+     {% endblock content %}
+
+
+
+
+
+
+    
+</htnml>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

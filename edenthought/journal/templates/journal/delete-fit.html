@@ -1,0 +1,32 @@
+{% extends 'journal/navbar.html'%}
+
+
+{% block content %}
+
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h3> Delete your progress </h3>
+
+        <br>
+
+        <p> Are you sure you want tot delete this progress ? </p>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            <br>
+
+            <button class="btn btn-secondary btn-md w-100 btn-block p-3" type = "submit" > Delete </button>
+
+        </form>
+
+        <br>
+
+        <a href="{% url 'my-fit'  %}"> Return to your progress  </a>
+
+    </div>
+
+{% endblock %}

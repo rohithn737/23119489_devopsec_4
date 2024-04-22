@@ -79,15 +79,15 @@ TEMPLATES = [
 WSGI_APPLICATION = "edenthought.wsgi.application"
 
 
-#Database
-#https://docs.djangoproject.com/en/4.2/ref/settings/databases
+# Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -106,16 +106,16 @@ WSGI_APPLICATION = "edenthought.wsgi.application"
 # }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'cppdbrnn',
-        'USER':'postgres',
-        'PASSWORD':'Na#21#21#7531',
-        'HOST':'cppdbrn.clduwfwypz0p.us-west-2.rds.amazonaws.com',# RDS endpoint
-        'PORT':'5432',# Adjust the port based on your RDS configuration
-        }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME':'cppdbrnn',
+#         'USER':'postgres',
+#         'PASSWORD':'Na#21#21#7531',
+#         'HOST':'cppdbrn.clduwfwypz0p.us-west-2.rds.amazonaws.com',# RDS endpoint
+#         'PORT':'5432',# Adjust the port based on your RDS configuration
+#         }
+# }
 
 
 # Password validation

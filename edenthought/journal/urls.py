@@ -22,5 +22,6 @@ urlpatterns = [
     path('update-fit/<str:pk>', views.update_fit,name = 'update-fit'), #Dynamic URL with a space holder
     path('delete-fit/<str:pk>', views.delete_fit,name = 'delete-fit'), #Dynamic URL with a space holder
     path('convert/', views.convert, name='convert'),
-    path('calorie-cal', views.calorie_cal, name = 'calorie-cal'),
+    path('calorie-cal', views.calorie_cal, name = 'calorie-cal'), #Public API URL
+    path('convert-timezone/', views.convert_time, name='convert-timezone'),
 ]

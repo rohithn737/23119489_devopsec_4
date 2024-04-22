@@ -14,20 +14,20 @@
 
     <form method="post" action="">
         {% csrf_token %}
-        country: <input type="float" name="height" required placeholder="Enter country"><br>
+        country: <input type="float" name="country" required placeholder="Enter country"><br>
         <br>
-        city: <input type="float" name="weight" step="any" required placeholder="Enter city"><br>
+        city: <input type="float" name="city" step="any" required placeholder="Enter city"><br>
         <br>
-        <input type="submit" name="bmi_submit" value="Calculate BMI">
+        <input type="submit" name="timezone_submit" value="Calculate time">
     </form>
     <br>
     <!--Currency Coverter Results Display-->
-    {% if bmi_result %}
+    {% if timezone_result %}
     <div class="card text-white bg-dark mb-3 text-center">
         <h4><strong>Your Time</strong></h4>
     </div>
     <br>
-    <p><strong>time: {{ bmi_result.time }}</strong></p>
+    <p><strong>Converted Timezone: {{ timezone_result.tzTime }}</strong></p>
     
 
     {% elif error %}

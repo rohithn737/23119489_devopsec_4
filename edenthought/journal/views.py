@@ -409,39 +409,39 @@ def calorie_cal(request):
     else:
         return render(request, 'journal/calorie-cal.html', {'query':'Enter a valid query'})
     
-# def convert_time(request):
-#     context = {}
+def convert_time(request):
+    context = {}
     
-#     if 'timezone_submit' in request.POST:
-#         country = request.POST.get('country')
-#         city = request.POST.get('city')
+    if 'timezone_submit' in request.POST:
+        country = request.POST.get('country')
+        city = request.POST.get('city')
 
-#         print(request.POST)
+        print(request.POST)
 
-#         context['timezone_result'] = timezone_converter(country, city)
-#         print([context])
+        context['timezone_result'] = timezone_converter(country, city)
+        print([context])
         
-#     return render(request, 'journal/timezone-converter.html', context)
+    return render(request, 'journal/timezone-converter.html', context)
     
-# def timezone_converter(country, city):
+def timezone_converter(country, city):
 
-#         api_url = "http://www.arunangshunayak.software/api/TimeZone"
+        api_url = "http://www.arunangshunayak.software/api/TimeZone"
 
-#         params = {
-#             'country': country,
-#             'city': city,
-#         }
+        params = {
+            'country': country,
+            'city': city,
+        }
 
-#         try:
-#             response = requests.post(api_url, json=params)
+        try:
+            response = requests.post(api_url, json=params)
 
-#             if response.status_code == 200:
-#                 result = response.json()
-#                 return result
-#             else:
-#                 error = 'API request failed with status code {}'.format(response.status_code)
-#                 return error
+            if response.status_code == 200:
+                result = response.json()
+                return result
+            else:
+                error = 'API request failed with status code {}'.format(response.status_code)
+                return error
         
-#         except Exception as e:
-#             error = 'Failed to connect to the API. Try Again!'
+        except Exception as e:
+            error = 'Failed to connect to the API. Try Again!'
 
